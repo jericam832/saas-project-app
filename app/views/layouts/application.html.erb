@@ -37,42 +37,50 @@
     <![endif]-->
   </head>
   <body>
-
-    <div class="navbar navbar-default navbar-static-top">
+    
+    <nav class="navbar navbar-expand-lg bg-info" role="navigation-demo">
       <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">SaasProjectApp</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-translate">
+          <%= link_to "SaasProjectApp",  home_index_path, class: "navbar-brand" %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <% if current_user %>
+              <li class="nav-item">
+                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile', class: 'nav-link' %>
+              </li>
+              <li class="nav-item"> 
+                <%= link_to '<i class="fa fa-users"></i> Add Members'.html_safe, new_member_path, class: 'btn btn-success' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to('Logout', destroy_user_session_path, class: 'btn btn-danger', title: 'Logout', :method => :delete) %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to('Sign In', new_user_session_path, class: 'btn btn-success', title: 'Sign In') %>
+              </li>
+            <% end %>
           </ul>
         </div>
+        <!-- /.navbar-collapse -->
       </div>
-    </div>
-
-    <div class="container">
+      <!-- /.container-->
+    </nav>
+          <!--                end default navbar -->
+    
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
       </div><!--/row-->
 
       <footer>
