@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
+gem 'rails-ujs'
 gem 'devise'
 gem 'milia'
 # Use SCSS for stylesheets
@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+
+gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

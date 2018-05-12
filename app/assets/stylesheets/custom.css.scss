@@ -1,4 +1,4 @@
- .navbar-default .navbar-nav > li> a {
+ .navbar-inverse .navbar-nav > li> a {
      color: #fff; 
 }
 .user-name {
@@ -30,10 +30,14 @@ body {
     background-repeat: repeat;
 }
 .jumbotron {
-    background: #00bcD4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F44336, #00bcD4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F44336, #00bcD4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: cover;
+    background-image: asset-url('project.jpeg');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position: center center;
+    // background: #00bcD4;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #F44336, #00bcD4);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #F44336, #00bcD4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background-size: cover;
     min-height: 380px;
     color: #fff;
     font-family: Roboto,Helvetica,Arial,sans-serif;
@@ -81,4 +85,40 @@ body {
  .no-right-padding {
      padding-left: 0;
      padding-right: 0;
+ }
+
+ #body-container {
+     background: #00bcd4;
+     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+                 0 3px 1px -2px rgba(0,0,0,.2), 
+                 0 1px 5px 0 rgba(0,0,0,.12);
+     
+ }
+#home-page,
+#org-home {
+     background: white;
+     border-radius: 5px;
+     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+                 0 3px 1px -2px rgba(0,0,0,.2), 
+                 0 1px 5px 0 rgba(0,0,0,.12);
+    padding-top: 15px;
+    padding-bottom: 95px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+ }
+ 
+ .table tr td {
+    a.main-link {
+        color: black;
+    } 
+    a.main-link:hover {
+        background: none;
+    } 
+     
+ }
+//  #org-home > table > thead > tr > th {
+//      text-align: center;
+//  }
+ #body-container > div > div > div.card-header.card-header-danger > h1:nth-child(2) > small {
+     color: white;
  }
